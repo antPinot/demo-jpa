@@ -15,14 +15,14 @@ public class Region {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "codeRegion", length = 4, nullable = true, unique = false)
-	private String codeRegion;
+	/*@Column(name = "codeRegion", length = 4, nullable = true, unique = false)
+	private String codeRegion;*/
 	
 	@Column(name = "nom", length = 100, nullable = true, unique = false)
 	private String nom;
 	
-	@Column(name = "population", length = Integer.MAX_VALUE, nullable = true, unique = false)
-	private Integer population;
+	/*@Column(name = "population", length = Integer.MAX_VALUE, nullable = true, unique = false)
+	private Integer population;*/
 	
 	/**Constructeur sans argument
 	 * 
@@ -35,11 +35,19 @@ public class Region {
 	 * @param nom
 	 * @param population
 	 */
-	public Region(String codeRegion, String nom, Integer population) {
+	
+	/**Constructeur
+	 * @param nom
+	 */
+	public Region(String nom) {
+		this.nom = nom;
+	}
+	
+	/*public Region(String codeRegion, String nom, Integer population) {
 		this.codeRegion = codeRegion;
 		this.nom = nom;
 		this.population = population;
-	}
+	}*/
 
 	/**Getter pour l'attribut id
 	 * @return the id
@@ -58,14 +66,14 @@ public class Region {
 	/**Getter pour l'attribut code
 	 * @return the code
 	 */
-	public String getCode() {
+	/*public String getCode() {
 		return codeRegion;
 	}
 
 	/**Setter pour l'attribut code
 	 * @param code the code to set
 	 */
-	public void setCode(String code) {
+	/*public void setCode(String code) {
 		this.codeRegion = code;
 	}
 
@@ -83,24 +91,31 @@ public class Region {
 		this.nom = nom;
 	}
 
+	@Override
+	public String toString() {
+		return "Region [id=" + id + ", nom=" + nom + "]";
+	}
+
 	/**Getter pour l'attribut population
 	 * @return the population
 	 */
-	public int getPopulation() {
+	/*public int getPopulation() {
 		return population;
 	}
 
 	/**Setter pour l'attribut population
 	 * @param population the population to set
 	 */
-	public void setPopulation(int population) {
+	/*public void setPopulation(int population) {
 		this.population = population;
-	}
+	}*/
 
-	@Override
+	/*@Override
 	public String toString() {
 		return "Region [id=" + id + ", codeRegion=" + codeRegion + ", nom=" + nom + ", population=" + population + "]";
-	}
+	}*/
+	
+	
 	
 
 }

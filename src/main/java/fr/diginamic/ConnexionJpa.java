@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.transaction.Transaction;
 
 public class ConnexionJpa {
 
@@ -21,11 +20,8 @@ public class ConnexionJpa {
 		
 		transaction.begin();
 		
-		Region licornie = new Region();
-		licornie.setNom("Licornie");
-		licornie.setPopulation(3);
-		licornie.setCode("333");
-		em.persist(licornie);
+		Region nvAquitaine = new Region("Nouvelle-Aquitaine");
+		em.persist(nvAquitaine);
 		
 		transaction.commit();
 		
