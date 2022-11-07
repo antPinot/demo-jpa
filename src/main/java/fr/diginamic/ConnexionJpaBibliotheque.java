@@ -6,7 +6,6 @@ package fr.diginamic;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
 
 /**
  * @author antPinot
@@ -36,6 +35,11 @@ public class ConnexionJpaBibliotheque {
 		Client client = em.find(Client.class, 1);
 		if (client != null) {
 			System.out.println("Les emprunts associés au client n°1 sont :\n" + client.getEmprunts());
+		}
+		
+		// Récupère les emprunts et les clients associés au livre n°2
+		for (Emprunt emp : livre.getEmprunts()) {
+			System.out.println(emp);
 		}
 
 	}

@@ -35,13 +35,13 @@ public class Emprunt {
 	@JoinTable(name = "COMPO", joinColumns = @JoinColumn(name = "ID_EMP", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "ID_LIV", referencedColumnName = "ID"))
 	private Set<Livre> livres;
 
-	@Column(name = "DATE_DEBUT", length = 30, nullable = false, unique = false)
+	@Column(name = "DATE_DEBUT", nullable = false, unique = false)
 	private Timestamp dateDebut;
 
-	@Column(name = "DELAI", length = 30, nullable = true, unique = false)
+	@Column(name = "DELAI", nullable = true, unique = false)
 	private Integer delai;
 
-	@Column(name = "DATE_FIN", length = 30, nullable = true, unique = false)
+	@Column(name = "DATE_FIN",nullable = true, unique = false)
 	private Timestamp dateFin;
 
 	/**
